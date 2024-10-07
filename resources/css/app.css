@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+    max-width: 800px;
+    opacity: 0.95;
+    margin: 50px auto 30px auto;
+}
