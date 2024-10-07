@@ -27,6 +27,8 @@ class GalleryResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(500),
+                Forms\Components\DatePicker::make('published_at')
+                    ->required(),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\Select::make('shows')
@@ -47,6 +49,9 @@ class GalleryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('published_at')
+                    ->default(now())
+                    ->sortable(),
             ])
             ->filters([
                 //
@@ -58,7 +63,8 @@ class GalleryResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('published_at', 'desc');
     }
 
     public static function getRelations(): array
