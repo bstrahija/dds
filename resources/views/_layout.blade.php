@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dead Dog Summer</title>
 
+    @livewireStyles
     @filamentStyles
     @vite(['resources/js/app.js'])
 
@@ -13,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap" rel="stylesheet">
 
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.webp') }}">
 
     <style>
         body {
@@ -47,6 +48,7 @@
     <p class="text-xl my-2">+385 98 9462 417 (Igor)</p>
 </div>
 
+@livewireScripts
 @filamentScripts
 </body>
 </html>
