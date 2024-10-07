@@ -28,7 +28,7 @@ class PagesController extends Controller
 
     public function galleries()
     {
-        $galleries = Gallery::orderBy('created_at', 'desc')->get();
+        $galleries = Gallery::orderBy('published_at', 'desc')->get();
 
         return view('galleries', [
             'galleries' => $galleries,
