@@ -16,6 +16,12 @@
                         <h2 class="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                                 <a href="{{ route('gallery', $gallery->id) }}" target="_blank">{{ $gallery->title }}</a>
                         </h2>
+
+                        @if ($gallery->published_at)
+                            <div class="prose max-w-none text-gray-500 dark:text-gray-400">
+                                {!! $gallery->published_at->format('F j, Y') !!}
+                            </div>
+                        @endif
                     </div>
 
                     @if ($gallery->description)

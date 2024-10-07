@@ -58,7 +58,7 @@
                             href="{{ route('gallery', $show->galleries->first()->id) }}">Gallery →</a>
 
                         @if ($show->venue_url)
-                            <span class="text-gray-500 dark:text-gray-400">|</span>
+                            <span class="text-gray-500 dark:text-gray-400 mx-4">|</span>
                         @endif
                     @endif
 
