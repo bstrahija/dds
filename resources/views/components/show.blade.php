@@ -30,7 +30,7 @@
                     <div>
                         <h2 class="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
                             @if ($show->venue_url)
-                                <a href="{{ $show->venue_url }}" target="_blank">{{ $show->title }}</a>
+                                <a href="{{ $show->venue_url }}" target="_blank" wire:navigate>{{ $show->title }}</a>
                             @else
                                 {{ $show->title }}
                             @endif
@@ -55,7 +55,7 @@
                     @if ($show->galleries->count() > 0)
                         <a
                             class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            href="{{ route('gallery', $show->galleries->first()->id) }}">Gallery →</a>
+                            href="{{ route('gallery', $show->galleries->first()->id) }}" wire:navigate>Gallery →</a>
 
                         @if ($show->venue_url)
                             <span class="text-gray-500 dark:text-gray-400 mx-4">|</span>
