@@ -41,6 +41,11 @@ class Show extends Model implements HasMedia
         return $this->getFirstMediaUrl('posters');
     }
 
+    public function posterPath(): string
+    {
+        return $this->getFirstMediaPath('posters');
+    }
+
     /**
      * @param null|App\Models\Media $media
      * @return void

@@ -8,9 +8,14 @@
             {!! $gallery->published_at->format('F j, Y') !!}
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="photo-gallery">
             @foreach ($gallery->getMedia() as $image)
-                <a href="{{ $image->getUrl() }}" data-lightbox="gallery" target="_blank" class="block aspect-square">
+                @php
+                    $imageInstance = \Spatie\MediaLibrary\Support\ImageFactory::load($image->getPath());
+                @endphp
+
+                <a href="{{ $image->getUrl() }}" data-lightbox="gallery" target="_blank" class="block aspect-square"
+                    data-pswp-width="{{ $imageInstance->getWidth() }}" data-pswp-height="{{ $imageInstance->getHeight() }}">
                     <img src="{{ $image->getUrl() }}" alt="{{ $gallery->title }}" class="w-full h-full object-cover">
                 </a>
             @endforeach
